@@ -1,0 +1,5 @@
+C:\Users\dell studio xps\Desktop\DevMath-master\DevMath\obj\Debug\DevMath.csproj.CoreCompileInputs.cache
+C:\Users\dell studio xps\Desktop\DevMath-master\DevMath\bin\Debug\DevMath.dll
+C:\Users\dell studio xps\Desktop\DevMath-master\DevMath\bin\Debug\DevMath.pdb
+C:\Users\dell studio xps\Desktop\DevMath-master\DevMath\obj\Debug\DevMath.dll
+C:\Users\dell studio xps\Desktop\DevMath-master\DevMath\obj\Debug\DevMath.pdb
