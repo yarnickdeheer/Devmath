@@ -48,20 +48,27 @@ namespace DevMath
 
         public static Vector2 Lerp(Vector2 a, Vector2 b, float t)
         {
-            return new Vector2(a.x + (b.x - a.x) * t , a.y + (b.y - a.y) * t);
+            DevMath.Clamp(t, 0, 1);
+			return a * (1 - t) + b * t;
         }
 
         public static float Angle(Vector2 lhs, Vector2 rhs)
         {
+            // ---- eerdere foute methode
+              //return ((float)Math.Atan2(rhs.x, rhs.y) - (float)Math.Atan2(lhs.x, lhs.y)); 
 
-            return ((float)Math.Atan2(rhs.x, rhs.y) - (float)Math.Atan2(lhs.x, lhs.y));
+
+            // nu worden de vectoren eerst van elkaar afgetrokken en met de vector die daaruit komt ga ik werken met de atan2
+            Vector2 temp = rhs-lhs;
+            return (float)Math.Atan2(temp.y, temp.x);
+          
         }
 
         public static Vector2 DirectionFromAngle(float angle)
         {
             // reverse angle
             // je hebt angle moet terug naar vector
-            return new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle));
+            return new Vector2((float)Math.Cos(DevMath.DegToRad(angle)), (float)Math.Sin(DevMath.DegToRad(angle)));
         }
 
         public static Vector2 operator +(Vector2 lhs, Vector2 rhs)

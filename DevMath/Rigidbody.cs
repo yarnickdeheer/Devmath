@@ -30,16 +30,27 @@ namespace DevMath
             /// afstand = acceleration * tijd  = (scaler)
             /// welke direction
             /// 
-            float friction = normalForce * frictionCoefficient;
-            float mag = (float)Math.Sqrt((forceDirection.x*forceDirection.x)+(forceDirection.y*forceDirection.y));
-            Acceleration = (float)(forceNewton - friction);
+
+            float force = forceNewton - (normalForce * frictionCoefficient);
+            float acceleration = force * mass * deltaTime;
+            Velocity = new Vector2(acceleration, acceleration);
 
 
-            Velocity = new Vector2((forceDirection.x* Acceleration / mag),(forceDirection.y* Acceleration / mag));
+ //           float friction = normalForce * frictionCoefficient;
+ //           float mag = (float)Math.Sqrt((forceDirection.x*forceDirection.x)+(forceDirection.y*forceDirection.y));
+ //        Acceleration = (float)(forceNewton - friction);
 
 
-            forceDirection = new Vector2((forceDirection.x * Velocity.x * deltaTime) , (forceDirection.y * Velocity.y * deltaTime));
+ //            Velocity = new Vector2((forceDirection.x* Acceleration / mag),(forceDirection.y* Acceleration / mag));
+
+
+ //           forceDirection = new Vector2((forceDirection.x * Velocity.x * deltaTime) , (forceDirection.y * Velocity.y * deltaTime));
         }
+       
+        
+        
+        
+        
         /// schiet object in directie * force en time
         /// velocityv equels force divided by mass multiplued by time
         /// 
